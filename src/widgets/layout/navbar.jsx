@@ -47,9 +47,9 @@ export function Navbar({ brandName, routes, action }) {
                                 <ChevronDownIcon className="h-4 w-4 ml-1 transition-transform duration-200 group-hover:rotate-180" />
                             </div>
                             <div
-                                className="absolute left-0 top-full w-full bg-[#263238] border border-gray-700 rounded-md shadow-xl
+                                className="absolute left-0 top-full w-full bg-[#263238] rounded-md shadow-xl
                                            opacity-0 invisible group-hover:opacity-100 group-hover:visible
-                                           transform -translate-y-2 group-hover:translate-y-0
+                                           transform -translate-y-2 group-hover:translate-y-1
                                            transition-all duration-300 ease-in-out z-50"
                             >
                                 <ul className="py-1">

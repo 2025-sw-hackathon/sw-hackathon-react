@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Link 임포트
+import { Link } from "react-router-dom";
 import { ChatbotUI } from "@/widgets/layout/ChatbotUI";
 import {
   Card,
@@ -14,7 +14,7 @@ import {
 } from "@material-tailwind/react";
 import { MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer } from "@/widgets/layout";
-import { FeatureCardCollege, TeamCard } from "@/widgets/cards"; // TeamCard import 확인
+import { FeatureCardCollege, TeamCard } from "@/widgets/cards";
 import { featuresDataCollege, teamData, contactData } from "@/data";
 
 export function Home() {
@@ -42,8 +42,8 @@ export function Home() {
           </div>
         </div>
         <section className="-mt-52 bg-white px-4 pb-20 pt-4">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"> {/* gap-6을 gap-4로 수정 */}
+          <div className="container mx-auto max-w-screen-xl">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-2">
               {featuresDataCollege.map(({ color, title, icon, description, links }) => (
                   <FeatureCardCollege
                       key={title}
@@ -74,12 +74,12 @@ export function Home() {
                   <br />
                   <br />
                 </Typography>
-                <Link to="/path-finding"> {/* 시작하기 버튼 라우팅 */}
+                <Link to="/path-finding">
                   <Button variant="filled">시작하기</Button>
                 </Link>
               </div>
               <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
-                <Link to="/path-finding" className="w-full"> {/* 카드 전체 라우팅 */}
+                <Link to="/path-finding" className="w-full">
                   <Card className="shadow-lg border shadow-gray-500/10 rounded-lg
                                  transition-all duration-300 ease-in-out
                                  hover:ring-1 hover:ring-green-500 hover:ring-opacity-50
@@ -87,7 +87,7 @@ export function Home() {
                     <CardHeader floated={false} className="relative h-56">
                       <img
                           alt="Card Image"
-                          src="/img/teamwork.png"
+                          src="/img/no_use/teamwork.png"
                           className="h-full w-full"
                       />
                     </CardHeader>
@@ -110,8 +110,9 @@ export function Home() {
             </div>
           </div>
         </section>
-        <section className="px-4 pt-20 pb-48">
-          <div className="container mx-auto">
+        <section className="px-4 pt-20 pb-48 bg-[#f7f8fa]">
+          {/* 이 div에 max-w-screen-xl 추가 */}
+          <div className="container mx-auto max-w-screen-xl">
             <PageTitle section="교수 소개" heading="정보통신학과">
               “정보통신의 길, 여러분의 가능성을 열어드립니다.”
             </PageTitle>
@@ -123,19 +124,17 @@ export function Home() {
                       name={name}
                       position={position}
                       socials={socials}
-                      detailUrl={detailUrl} // detailUrl prop 전달
+                      detailUrl={detailUrl}
                   />
               ))}
             </div>
           </div>
         </section>
-        {/* ... 이하 생략 ... */}
+        {/* Co-Working 섹션 배경색 변경 */}
         <section className="relative bg-white py-24 px-4">
           <div className="container mx-auto">
-            <PageTitle section="Co-Working" heading="Build something">
-              Put the potentially record low maximum sea ice extent tihs year down
-              to low ice. According to the National Oceanic and Atmospheric
-              Administration, Ted, Scambos.
+            <PageTitle section="교과 과정 소개" heading="핵심 전공 과정">
+              “미래 기술의 중심, 당신의 잠재력에 날개를 달아드립니다."
             </PageTitle>
             <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
               {contactData.map(({ title, icon, description }) => (
